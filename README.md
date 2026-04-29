@@ -11,22 +11,48 @@
 
 ## 📦 Overview
 
-`Odex.AspNetCore.Clarc.Infrastructure` is the companion infrastructure layer to `Odex.AspNetCore.Clarc.Domain`. It provides concrete implementations and utilities for:
+`Odex.AspNetCore.Clarc.Infrastructure` is the companion infrastructure layer to `Odex.AspNetCore.Clarc.Domain`. It
+provides concrete implementations and utilities for:
 
 - **Query Building** – Fluent, extensible query builders with pagination support.
-- **Infrastructure Exceptions** – Typed exceptions for configuration, database, external services, serialization, and more.
+- **Infrastructure Exceptions** – Typed exceptions for configuration, database, external services, serialization, and
+  more.
 - **Data Access Abstractions** – Base classes for building dynamic LINQ queries with includes, filters, and sorting.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) or later
+- An ASP.NET Core project (Web API, Minimal API, or MVC)
+- [Odex.AspNetCore.Clarc.Domain](https://www.nuget.org/packages/Odex.AspNetCore.Clarc.Domain) package (optional but recommended)
+
+### Installation
+
+Install the package via NuGet Package Manager:
+
+```bash
+dotnet add package Odex.AspNetCore.Clarc.Infrastructure
+```
+
+Or use the Package Manager Console:
+
+```bash
+Install-Package Odex.AspNetCore.Clarc.Infrastructure
+```
 
 ---
 
 ## ✨ Features
 
-| Feature | Description |
-|---------|-------------|
-| 🔍 **ClarcQueryBuilder** | Base query builder with modification pipeline (`ModifyQuery`), include tracking, and sort flags. |
-| 📄 **ClarcPaginatedQueryBuilder** | Extends query builder with automatic `Skip`/`Take` pagination using `PagedRequest`. |
-| ⚠️ **Infrastructure Exceptions** | Typed exceptions for common infrastructure failures (DB, config, external services, etc.). |
-| 🏷️ **State Tracking** | Built-in flags (`IsFiltered`, `HasIncludes`, `HasSorts`) to know what was applied to the query. |
+| Feature                           | Description                                                                                      |
+|-----------------------------------|--------------------------------------------------------------------------------------------------|
+| 🔍 **ClarcQueryBuilder**          | Base query builder with modification pipeline (`ModifyQuery`), include tracking, and sort flags. |
+| 📄 **ClarcPaginatedQueryBuilder** | Extends query builder with automatic `Skip`/`Take` pagination using `PagedRequest`.              |
+| ⚠️ **Infrastructure Exceptions**  | Typed exceptions for common infrastructure failures (DB, config, external services, etc.).       |
+| 🏷️ **State Tracking**            | Built-in flags (`IsFiltered`, `HasIncludes`, `HasSorts`) to know what was applied to the query.  |
 
 ---
 
@@ -98,15 +124,15 @@ public abstract class ClarcPaginatedQueryBuilder<TEntity, TIncludes>(IQueryable<
 
 All exceptions inherit from `InfrastructureException` and include an `ExceptionType` enum for programmatic handling.
 
-| Exception | Use Case |
-|-----------|----------|
-| `ConfigurationException` | Missing/invalid configuration values. |
-| `DatabaseConnectionException` | Failed connection to database. |
-| `ExternalServiceException` | HTTP call failures to external APIs. |
-| `GeneratorException` | ID generation or token generation failures. |
-| `RepositoryException` | Generic repository operation failures. |
-| `SerializationException` | JSON/XML serialization/deserialization errors. |
-| `TransactionException` | Transaction rollback or commit failures. |
+| Exception                     | Use Case                                       |
+|-------------------------------|------------------------------------------------|
+| `ConfigurationException`      | Missing/invalid configuration values.          |
+| `DatabaseConnectionException` | Failed connection to database.                 |
+| `ExternalServiceException`    | HTTP call failures to external APIs.           |
+| `GeneratorException`          | ID generation or token generation failures.    |
+| `RepositoryException`         | Generic repository operation failures.         |
+| `SerializationException`      | JSON/XML serialization/deserialization errors. |
+| `TransactionException`        | Transaction rollback or commit failures.       |
 
 **Exception Types Enum:**
 
@@ -303,11 +329,11 @@ catch (InfrastructureException ex)
 
 ## 📂 Namespace Map
 
-| Namespace | Purpose |
-|-----------|---------|
-| `Odex.AspNetCore.Clarc.Infrastructure.Constants` | `ExceptionType` enum |
+| Namespace                                                 | Purpose                                           |
+|-----------------------------------------------------------|---------------------------------------------------|
+| `Odex.AspNetCore.Clarc.Infrastructure.Constants`          | `ExceptionType` enum                              |
 | `Odex.AspNetCore.Clarc.Infrastructure.Data.QueryBuilders` | `ClarcQueryBuilder`, `ClarcPaginatedQueryBuilder` |
-| `Odex.AspNetCore.Clarc.Infrastructure.Exceptions` | All infrastructure-specific exceptions |
+| `Odex.AspNetCore.Clarc.Infrastructure.Exceptions`         | All infrastructure-specific exceptions            |
 
 ---
 
