@@ -1,0 +1,27 @@
+# Build
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDE
+.idea/
+.vs/
+*.DotSettings.user
+
+# NuGet / packaging
+*.nupkg
+*.snupkg
+
+# Tests
+TestResults/
+*.trx
+
+# OS
+.DS_Store
+Thumbs.db

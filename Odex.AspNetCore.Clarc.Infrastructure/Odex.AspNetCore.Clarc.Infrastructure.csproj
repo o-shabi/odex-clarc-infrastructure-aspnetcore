@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <RootNamespace>Odex.AspNetCore.Clarc.Infrastructure</RootNamespace>
+        <AssemblyName>Odex.AspNetCore.Clarc.Infrastructure</AssemblyName>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <PackageId>Odex.AspNetCore.Clarc.Infrastructure</PackageId>
+        <Version>0.2.0</Version>
+        <Title>Odex CLARC — Infrastructure</Title>
+        <Authors>Asen O'Shabi</Authors>
+        <Company>O'Shabi</Company>
+        <Copyright>Copyright © Asen O'Shabi</Copyright>
+        <Description>Multi-purpose CLARC infrastructure for .NET 9: LINQ query builders, Domain-aligned paging, specification filters, transaction support, and typed infrastructure exceptions. Bring your own ORM or LINQ provider.</Description>
+        <PackageTags>ddd;clean-architecture;infrastructure;query-builder;pagination;specification;unit-of-work;clarc;dotnet</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://github.com/o-shabi/odex-clarc-infrastructure-aspnetcore</PackageProjectUrl>
+        <PackageReleaseNotes>https://github.com/o-shabi/odex-clarc-infrastructure-aspnetcore/blob/main/CHANGELOG.md</PackageReleaseNotes>
+        <RepositoryUrl>https://github.com/o-shabi/odex-clarc-infrastructure-aspnetcore.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <NeutralLanguage>en</NeutralLanguage>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
+        <PackageReference Include="Odex.AspNetCore.Clarc.Domain" Version="0.2.0"/>
+        <None Include="..\README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>
